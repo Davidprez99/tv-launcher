@@ -1,0 +1,312 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:clipChildren="false">
+
+    <ImageView
+        android:id="@+id/wallpaper"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:importantForAccessibility="no"
+        android:scaleType="centerCrop"
+        android:src="@drawable/default_wallpaper" />
+
+    <!-- My Favourites: the selected show's scene crossfades in over the wallpaper. -->
+    <FrameLayout
+        android:id="@+id/scenes"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <ImageView
+            android:id="@+id/scene_a"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:alpha="0"
+            android:importantForAccessibility="no"
+            android:scaleType="centerCrop" />
+
+        <ImageView
+            android:id="@+id/scene_b"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:alpha="0"
+            android:importantForAccessibility="no"
+            android:scaleType="centerCrop" />
+    </FrameLayout>
+
+    <!-- Darkens the background a little when you scroll down to My Favourites. -->
+    <View
+        android:id="@+id/dim"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:alpha="0"
+        android:background="#000000" />
+
+    <!-- Light shade at the top for the clock, a soft black gradient across the bottom for the dock. -->
+    <View
+        android:id="@+id/scrim"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@drawable/scrim" />
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="340dp"
+        android:layout_gravity="bottom"
+        android:background="@drawable/bottom_shade" />
+
+    <!-- Home page: clock, icons, tagline and dock -->
+    <FrameLayout
+        android:id="@+id/page_home"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:clipChildren="false">
+
+        <!-- Brand-coloured glow behind the dock; its colour follows the focused app. -->
+        <View
+            android:id="@+id/glow"
+            android:layout_width="720dp"
+            android:layout_height="720dp"
+            android:layout_gravity="bottom|center_horizontal"
+            android:layout_marginBottom="-290dp"
+            android:scaleY="0.3" />
+
+        <!-- Greeting, clock and weather -->
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="56dp"
+            android:layout_marginTop="34dp"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/greeting"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:letterSpacing="0.18"
+                android:textColor="#CCFFFFFF"
+                android:textSize="11sp" />
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:gravity="center_vertical"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:id="@+id/time"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:includeFontPadding="false"
+                    android:textColor="#FFFFFF"
+                    android:textSize="48sp" />
+
+                <TextView
+                    android:id="@+id/ampm"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="bottom"
+                    android:layout_marginStart="6dp"
+                    android:layout_marginBottom="8dp"
+                    android:textColor="#FFFFFF"
+                    android:textSize="13sp" />
+
+                <LinearLayout
+                    android:id="@+id/weather"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="22dp"
+                    android:gravity="center_vertical"
+                    android:orientation="horizontal"
+                    android:visibility="gone">
+
+                    <com.terry.home.WeatherIconView
+                        android:id="@+id/weather_icon"
+                        android:layout_width="26dp"
+                        android:layout_height="26dp" />
+
+                    <TextView
+                        android:id="@+id/weather_temp"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="8dp"
+                        android:textColor="#E6FFFFFF"
+                        android:textSize="18sp" />
+                </LinearLayout>
+            </LinearLayout>
+
+            <!-- Daily quote (quotes.txt), one per day -->
+            <LinearLayout
+                android:id="@+id/quote"
+                android:layout_width="320dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="14dp"
+                android:orientation="vertical"
+                android:visibility="gone">
+
+                <TextView
+                    android:id="@+id/quote_text"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:lineSpacingMultiplier="1.15"
+                    android:textColor="#E6FFFFFF"
+                    android:textSize="14sp" />
+
+                <TextView
+                    android:id="@+id/quote_author"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="6dp"
+                    android:letterSpacing="0.1"
+                    android:textColor="#99FFFFFF"
+                    android:textSize="10sp" />
+            </LinearLayout>
+        </LinearLayout>
+
+        <!-- Remote / Wi-Fi / Settings -->
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="top|end"
+            android:layout_marginTop="44dp"
+            android:layout_marginEnd="48dp"
+            android:orientation="horizontal">
+
+            <ImageButton
+                android:id="@+id/btn_remote"
+                style="@style/TopButton"
+                android:contentDescription="Remotes &amp; accessories"
+                android:src="@drawable/ic_remote" />
+
+            <ImageButton
+                android:id="@+id/btn_wifi"
+                style="@style/TopButton"
+                android:contentDescription="Wi-Fi"
+                android:src="@drawable/ic_wifi" />
+
+            <ImageButton
+                android:id="@+id/btn_settings"
+                style="@style/TopButton"
+                android:contentDescription="Settings"
+                android:src="@drawable/ic_settings" />
+        </LinearLayout>
+
+        <!-- Tagline above the dock, then the dock of white logos (filled in HomeActivity) -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="bottom"
+            android:layout_marginBottom="34dp"
+            android:clipChildren="false"
+            android:clipToPadding="false"
+            android:gravity="center_horizontal"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/tagline"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="26dp"
+                android:textColor="#D9FFFFFF"
+                android:textSize="16sp" />
+
+            <LinearLayout
+                android:id="@+id/tiles"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:clipChildren="false"
+                android:clipToPadding="false"
+                android:gravity="center_vertical"
+                android:orientation="horizontal" />
+        </LinearLayout>
+    </FrameLayout>
+
+    <!-- My Favourites page (Down from the dock) -->
+    <FrameLayout
+        android:id="@+id/page_fav"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:alpha="0"
+        android:clipChildren="false"
+        android:visibility="invisible">
+
+        <View
+            android:id="@+id/fav_glow"
+            android:layout_width="520dp"
+            android:layout_height="520dp" />
+
+        <FrameLayout
+            android:id="@+id/fav_stage"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:clipChildren="false" />
+
+        <!-- Legs fade into black at the bottom of the screen. -->
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="190dp"
+            android:layout_gravity="bottom"
+            android:background="@drawable/fav_fade" />
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="top|center_horizontal"
+            android:layout_marginTop="34dp"
+            android:gravity="center_horizontal"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/fav_section"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:letterSpacing="0.22"
+                android:text="MY FAVOURITES"
+                android:textColor="#99FFFFFF"
+                android:textSize="10sp" />
+
+            <TextView
+                android:id="@+id/fav_title"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="6dp"
+                android:letterSpacing="0.12"
+                android:textColor="#FFFFFF"
+                android:textSize="26sp" />
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="4dp"
+                android:gravity="center_vertical"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:id="@+id/fav_character"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textColor="#CCFFFFFF"
+                    android:textSize="12sp" />
+
+                <ImageView
+                    android:layout_width="44dp"
+                    android:layout_height="12dp"
+                    android:layout_marginStart="10dp"
+                    android:alpha="0.85"
+                    android:importantForAccessibility="no"
+                    android:scaleType="fitCenter"
+                    android:src="@drawable/logo_netflix" />
+            </LinearLayout>
+        </LinearLayout>
+    </FrameLayout>
+
+    <!-- Mood cards page (Down from My Favourites), built in MoodDeck -->
+    <FrameLayout
+        android:id="@+id/page_mood"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:alpha="0"
+        android:clipChildren="false"
+        android:visibility="invisible" />
+</FrameLayout>

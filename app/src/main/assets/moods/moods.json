@@ -1,0 +1,152 @@
+{
+ "moods": [
+  {
+   "key": "crime",
+   "name": "Crime & power",
+   "color": "#D0202E",
+   "titles": [
+    "peaky",
+    "heist",
+    "narcos",
+    "ozark",
+    "breakingbad"
+   ]
+  },
+  {
+   "key": "sharp",
+   "name": "Smart & sharp",
+   "color": "#4A7BC0",
+   "titles": [
+    "suits",
+    "gambit",
+    "mindhunter",
+    "lupin"
+   ]
+  },
+  {
+   "key": "anime",
+   "name": "Anime nights",
+   "color": "#2EAA6B",
+   "titles": [
+    "demon",
+    "onepiece",
+    "edgerunners",
+    "castlevania"
+   ]
+  },
+  {
+   "key": "edge",
+   "name": "Edge of your seat",
+   "color": "#8E3CF7",
+   "titles": [
+    "stranger",
+    "squid",
+    "dark",
+    "blackmirror"
+   ]
+  },
+  {
+   "key": "laugh",
+   "name": "Laugh it off",
+   "color": "#F2B705",
+   "titles": [
+    "b99",
+    "wednesday",
+    "sexed",
+    "neverhave"
+   ]
+  },
+  {
+   "key": "any",
+   "name": "Anything at all",
+   "color": "#E8E8E8",
+   "titles": []
+  }
+ ],
+ "titles": {
+  "peaky": {
+   "name": "Peaky Blinders",
+   "id": "80002479"
+  },
+  "heist": {
+   "name": "Money Heist",
+   "id": "80192098"
+  },
+  "narcos": {
+   "name": "Narcos",
+   "id": "80025172"
+  },
+  "ozark": {
+   "name": "Ozark",
+   "id": "80117552"
+  },
+  "breakingbad": {
+   "name": "Breaking Bad",
+   "id": "70143836"
+  },
+  "suits": {
+   "name": "Suits",
+   "id": "70195800"
+  },
+  "gambit": {
+   "name": "The Queen's Gambit",
+   "id": "80234304"
+  },
+  "mindhunter": {
+   "name": "Mindhunter",
+   "id": "80114855"
+  },
+  "lupin": {
+   "name": "Lupin",
+   "id": "80994082"
+  },
+  "demon": {
+   "name": "Demon Slayer",
+   "id": "81091393"
+  },
+  "onepiece": {
+   "name": "One Piece",
+   "id": "80217863"
+  },
+  "edgerunners": {
+   "name": "Cyberpunk: Edgerunners",
+   "id": "81054853"
+  },
+  "castlevania": {
+   "name": "Castlevania",
+   "id": "80095241"
+  },
+  "stranger": {
+   "name": "Stranger Things",
+   "id": "80057281"
+  },
+  "squid": {
+   "name": "Squid Game",
+   "id": "81040344"
+  },
+  "dark": {
+   "name": "Dark",
+   "id": "80100172"
+  },
+  "blackmirror": {
+   "name": "Black Mirror",
+   "id": "70264888"
+  },
+  "b99": {
+   "name": "Brooklyn Nine-Nine",
+   "id": "70281562"
+  },
+  "wednesday": {
+   "name": "Wednesday",
+   "id": "81231974"
+  },
+  "sexed": {
+   "name": "Sex Education",
+   "id": "80197526"
+  },
+  "neverhave": {
+   "name": "Never Have I Ever",
+   "id": "80179190"
+  }
+ }
+}

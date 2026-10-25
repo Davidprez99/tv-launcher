@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Shown until a photo is pushed to the TV (see README). -->
+<layer-list xmlns:android="http://schemas.android.com/apk/res/android">
+    <item>
+        <shape>
+            <gradient android:angle="270" android:startColor="#0B0E1E" android:centerColor="#1A1430" android:endColor="#2A1A1A" />
+        </shape>
+    </item>
+    <item>
+        <shape>
+            <gradient android:type="radial" android:gradientRadius="900" android:centerX="0.5" android:centerY="1.0"
+                android:startColor="#55C77A2E" android:endColor="#00000000" />
+        </shape>
+    </item>
+</layer-list>

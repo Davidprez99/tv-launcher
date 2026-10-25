@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Home</string>
+    <string name="home_key_service">Home button → Home launcher</string>
+    <string name="home_key_service_desc">Makes the remote\'s Home button open this launcher instead of Google TV.</string>
+</resources>

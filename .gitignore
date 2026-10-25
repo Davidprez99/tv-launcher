@@ -1,0 +1,16 @@
+.venv/
+.venv-rembg/
+.gradle/
+build/
+app/build/
+local.properties
+.claude/
+.idea/
+*.iml
+.DS_Store
+
+# Large / personal working files, not part of the app source
+assets-src/
+shots/
+tv-backup/
+wallpaper*.jpg
